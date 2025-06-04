@@ -1,0 +1,34 @@
+const name = document.getElementById('userName').value
+const password = document.getElementById('passWord').value
+
+if (name === 'Imran578' && password === 'mySite') {
+
+    localStorage.setItem('isLoggedIn', 'true');
+    localStorage.setItem('username', name);
+    localStorage.setItem('profilePic', 'profile.jpg');
+    
+    alert ('Login Succesful!');
+    window.location.href = "Falconium.html";
+    return true;
+}
+
+const loggedIn = localStorage.getItem('isLoggedIn');
+
+    if (loggedIn === 'true') {
+
+        const username = localStorage.getItem('username') || 'user';
+        const profilepic = localStorage.getItem('profilePic') || 'defaultProfile.jpg'
+
+        const loginLi = document.querySelector('.loginElement');
+        const loginImgLi = document.querySelector('.loginVisual');
+        const profileLi = document.querySelector('.profileElement')
+
+        if (loginLi) LoginLi.style.display = 'none';
+        if (loginImgLi) loginImgLi.style.display = 'none';
+        if (profileLi) profileLi.style.display = 'block';
+
+
+    }
+
+
+
